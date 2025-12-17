@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agencia - BIENES RAÍCES Real Estate</title>
+    <link rel="icon" href="logo.ico">
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFFFFF;
+            color: #333333;
+            padding-top: 80px; 
+        }
+        .nav-link-active {
+            font-weight: 600;
+            color: #0056b3; 
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 4px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+</head>
+<body>
+
+    <!-- A. Encabezado Fijo (Header) -->
+    <header class="fixed top-0 w-full bg-white shadow-md z-50">
+        <div class="container mx-auto flex justify-between items-center px-4 py-4 md:px-8">
+            <div class="text-3xl font-extrabold tracking-wider text-gray-800">
+                BIENES RAÍCES
+            </div>
+
+            <button id="menu-toggle" class="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+
+            <nav id="main-nav" class="hidden md:block">
+                <ul class="flex space-x-8 text-base font-medium text-gray-600">
+                    <li><a href="index.html" class="hover:text-gray-900 transition-colors duration-200">Inicio</a></li>
+                    <li><a href="propiedades.html" class="hover:text-gray-900 transition-colors duration-200">Propiedades</a></li>
+                    <li><a href="agencia.html" class="nav-link-active transition-colors duration-200">Agencia</a></li>
+                    <li><a href="contacto.html" class="hover:text-gray-900 transition-colors duration-200">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden w-full bg-gray-50 border-t border-gray-200">
+            <ul class="flex flex-col space-y-2 p-4 text-gray-700">
+                <li><a href="index.html" class="block py-2 px-3 hover:bg-gray-100 rounded-lg">Inicio</a></li>
+                <li><a href="propiedades.html" class="block py-2 px-3 hover:bg-gray-100 rounded-lg">Propiedades</a></li>
+                <li><a href="agencia.html" class="block py-2 px-3 nav-link-active bg-gray-100 rounded-lg">Agencia</a></li>
+                <li><a href="contacto.html" class="block py-2 px-3 hover:bg-gray-100 rounded-lg">Contacto</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- B. Sección Principal (<main>) -->
+    <main class="container mx-auto px-4 py-8 md:py-16">
+
+        <div class="text-center mb-12 md:mb-16"></div>
+
+        <!-- Sección 1: LA AGENCIA -->
+        <section class="mb-16 md:mb-24 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
+            <div class="md:order-1">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">NUESTRA AGENCIA</h2>
+                <h3 class="text-base font-bold text-gray-800 mb-4">Expertos en el Mercado Inmobiliario</h3>
+                
+                <p class="text-gray-700 text-xs leading-relaxed mb-4">
+                    En BIENES RAÍCES Real Estate, transformamos la experiencia de compra, venta y renta. Somos una agencia boutique enfocada en brindar asesoría personalizada y resultados eficientes en cada transacción.
+                </p>
+
+                <p class="text-gray-700 text-xs leading-relaxed mb-2 font-semibold">
+                    Nuestros departamentos especializados:
+                </p>
+
+                <ul class="list-disc list-inside text-gray-700 text-xs leading-relaxed mb-4 ml-4 space-y-1">
+                    <li>Asesoría en Ventas Residenciales</li>
+                    <li>Gestión de Arrendamientos</li>
+                    <li>División de Propiedades Comerciales e Industriales</li>
+                    <li>Marketing Inmobiliario de Alto Impacto</li>
+                    <li>Asesoría Legal y Tramitación de Créditos</li>
+                </ul>
+
+                <p class="text-gray-700 text-xs leading-relaxed mb-4">
+                    Contamos con un equipo apasionado que entiende que una propiedad es más que un inmueble: es un patrimonio o un proyecto de vida. Nuestra agilidad operativa nos permite cerrar tratos en tiempos récord.
+                </p>
+            </div>
+
+            <div class="md:order-2">
+                <div class="relative w-full overflow-hidden rounded-xl shadow-2xl border-4 border-white" style="padding-top: 56.25%;"> 
+                    <!-- Video de Ejemplo 1 - Manteniendo URL original -->
+                    <iframe src="https://www.youtube.com/embed/4HGSm6QzdQM" frameborder="0" allowfullscreen class="absolute top-0 left-0 w-full h-full"></iframe>
+                </div>
+                <a href="tel:+528119127664" class="mt-6 w-full inline-block text-center bg-blue-600 text-white py-3 px-6 rounded-lg shadow-xl hover:bg-blue-700 transition-colors duration-300 font-bold tracking-wide text-sm md:text-base">
+                    Llamar a un Asesor
+                </a>
+            </div>
+        </section>
+
+        <!-- Sección 2: GESTIÓN DE CARTERA -->
+        <section class="mb-16 md:mb-24 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
+            <div class="md:order-1">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Gestión de Propiedades y Cartera</h2>
+                
+                <p class="text-gray-700 text-xs leading-relaxed mb-4">
+                    Nuestra infraestructura de gestión asegura que cada propiedad en nuestro catálogo reciba la máxima exposición y el mantenimiento de perfil adecuado para atraer a los mejores clientes.
+                </p>
+
+                <p class="text-gray-700 text-xs leading-relaxed mb-2 font-semibold">
+                    Capacidad y Alcance:
+                </p>
+
+                <ul class="list-disc list-inside text-gray-700 text-xs leading-relaxed mb-4 ml-4 space-y-1">
+                    <li>Cartera activa: +900 propiedades verificadas</li>
+                    <li>Plataformas digitales: Presencia en los 5 portales líderes</li>
+                    <li>Alcance: Cobertura local y nacional</li>
+                    <li>Efectividad: 95% de éxito en cierres programados</li>
+                </ul>
+
+                <p class="text-gray-700 text-xs leading-relaxed mb-4">
+                    Optimizamos la rentabilidad de sus activos inmobiliarios mediante una administración profesional de rentas, asegurando pagos puntuales y filtrado riguroso de prospectos.
+                </p>
+            </div>
+
+            <div class="md:order-2">
+                <div class="relative w-full overflow-hidden rounded-xl shadow-2xl border-4 border-white" style="padding-top: 56.25%;"> 
+                    <!-- Video de Ejemplo 2 - Manteniendo URL original -->
+                    <iframe src="https://www.youtube.com/embed/g21bC8DuhDM" frameborder="0" allowfullscreen class="absolute top-0 left-0 w-full h-full"></iframe>
+                </div>
+                <a href="tel:+528119127664" class="mt-6 w-full inline-block text-center bg-blue-600 text-white py-3 px-6 rounded-lg shadow-xl hover:bg-blue-700 transition-colors duration-300 font-bold tracking-wide text-sm md:text-base">
+                    Quiero Vender/Rentar
+                </a>
+            </div>
+        </section>
+
+        <!-- Sección 4: DESARROLLO Y VENTAS -->
+        <section class="mb-16 md:mb-24 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
+            <div class="md:order-1">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Estrategia de Ventas y Cierre</h2>
+                
+                <p class="text-gray-700 text-xs leading-relaxed mb-4">
+                    Operamos con un ciclo completo: desde la valuación profesional hasta la firma ante notario, eliminando el estrés para nuestros clientes.
+                </p>
+
+                <p class="text-gray-700 text-xs leading-relaxed mb-2 font-semibold">
+                    Fase de Comercialización:
+                </p>
+
+                <p class="text-gray-700 text-xs leading-relaxed mb-4">
+                    Realizamos estudios de mercado comparativos para asignar precios competitivos. Utilizamos herramientas digitales y recorridos virtuales 360° para pre-calificar a los interesados antes de las visitas físicas.
+                </p>
+                
+                <p class="text-gray-700 text-xs leading-relaxed mb-2 font-semibold">
+                    Fase de Cierre:
+                </p>
+
+                <p class="text-gray-700 text-xs leading-relaxed mb-4">
+                    Nuestro equipo legal asegura que toda la documentación esté en regla, coordinando con instituciones financieras y notarías para garantizar una transacción transparente y segura para ambas partes.
+                </p>
+
+                <div class="mt-4 p-4 bg-gray-50 rounded-lg">
+                    <p class="text-gray-700 text-xs font-bold">Experiencia: +10 años en el mercado</p>
+                    <p class="text-gray-700 text-xs font-bold">Rapidez: Venta promedio en menos de 90 días</p>
+                    <p class="text-gray-700 text-xs font-bold">Servicio: Personalizado 24/7</p>
+                </div>
+            </div>
+
+            <div class="md:order-2">
+                <div class="relative w-full overflow-hidden rounded-xl shadow-2xl border-4 border-white" style="padding-top: 56.25%;"> 
+                    <!-- Video de Ejemplo 3 - Manteniendo URL original -->
+                    <iframe src="https://www.youtube.com/embed/d2Tkfzur4ac" frameborder="0" allowfullscreen class="absolute top-0 left-0 w-full h-full"></iframe>
+                </div>
+                <a href="tel:+528119127664" class="mt-6 w-full inline-block text-center bg-blue-600 text-white py-3 px-6 rounded-lg shadow-xl hover:bg-blue-700 transition-colors duration-300 font-bold tracking-wide text-sm md:text-base">
+                    Agendar Cita
+                </a>
+            </div>
+        </section>
+
+        <!-- Sección 3: MISIÓN Y VALORES -->
+        <section class="mb-16 md:mb-24 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
+            <div>
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Nuestra Misión</h2>
+                <ul class="list-none space-y-3 text-gray-700 text-xs">
+                    <li class="flex items-start">
+                        <span class="text-blue-600 mr-2 mt-1">✓</span> Ayudar a nuestros clientes a encontrar el hogar de sus sueños.
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-blue-600 mr-2 mt-1">✓</span> Maximizar el valor de las inversiones inmobiliarias.
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-blue-600 mr-2 mt-1">✓</span> Brindar seguridad jurídica en cada contrato.
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-blue-600 mr-2 mt-1">✓</span> Ser líderes en innovación y marketing digital inmobiliario.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="flex flex-col space-y-12">
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6">Valores de Agencia</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="text-center p-4 bg-gray-50 rounded-lg shadow-sm">
+                            <span class="text-4xl mb-2 block">🏠</span>
+                            <p class="font-medium text-gray-900 text-xs">Confianza</p>
+                        </div>
+                        <div class="text-center p-4 bg-gray-50 rounded-lg shadow-sm">
+                            <span class="text-4xl mb-2 block">⚖️</span>
+                            <p class="font-medium text-gray-900 text-xs">Ética</p>
+                        </div>
+                        <div class="text-center p-4 bg-gray-50 rounded-lg shadow-sm">
+                            <span class="text-4xl mb-2 block">📊</span>
+                            <p class="font-medium text-gray-900 text-xs">Resultados</p>
+                        </div>
+                        <div class="text-center p-4 bg-gray-50 rounded-lg shadow-sm">
+                            <span class="text-4xl mb-2 block">🤝</span>
+                            <p class="font-medium text-gray-900 text-xs">Cercanía</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <footer class="main-footer bg-[#1E2C3A] text-white py-16 md:py-20">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 pb-12">
+                <div>
+                    <h3 class="text-3xl font-bold mb-3">BIENES RAÍCES</h3>
+                    <p class="text-gray-300 mb-6 text-sm">Tu aliado en bienes raíces.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-[#0056b3] text-3xl"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white hover:text-[#0056b3] text-3xl"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white hover:text-[#0056b3] text-3xl"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="text-white hover:text-[#0056b3] text-3xl"><i class="fas fa-home"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-md font-normal mb-3 uppercase tracking-wider">DESARROLLO WEB</h4>
+                    <p class="text-gray-300 mb-4">
+                        <span class="font-semibold block">Ing. Edgar Lomas</span>
+                        <span class="block">edgarlms131@gmail.com</span>
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-md font-normal mb-3 uppercase tracking-wider">CONTACTO</h4>
+                    <p class="text-gray-300 mb-4">
+                        <span class="block">ventas@distlub.com</span>
+                        <span class="font-semibold block">+52 811 912 7664</span>
+                    </p>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-700/50 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+                <div>&copy; 2025 BIENES RAÍCES Real Estate. Todos los derechos reservados.</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            menuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

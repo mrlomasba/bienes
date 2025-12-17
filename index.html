@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIENES RAÍCES - Venta y Renta de Propiedades</title>
+    <link rel="icon" href="logo.ico">
+    <!-- Carga de Tailwind CSS para un estilizado rápido y responsive -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuración para la fuente Inter (moderna sans-serif) -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+        /* Clase para el efecto de scroll en el header */
+        .scrolled-nav {
+            background-color: #ffffff; /* Fondo BLANCO al desplazarse, como se solicitó */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        /* Estilo para el enlace activo */
+        .nav-link-active {
+            font-weight: 600;
+            color: #0056b3; /* Color de acento azul */
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 4px;
+        }
+    </style>
+    <!-- Font Awesome CDN para íconos sociales -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJqQ62rFk+2SDAA8V7n2U7FzF5p0tE0P7K4W71o+oF+G4+E5/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <!-- 2. Requisito de Estructura: Encabezado (<header>) -->
+    <!-- Se remueve el padding-top del body, ya que ahora el padding está en el CSS -->
+    <header id="main-header" class="fixed w-full z-50 transition-all duration-300 py-4 bg-transparent text-white">
+        <div class="container mx-auto flex justify-between items-center px-4 md:px-8">
+            
+            <!-- Logotipo/Nombre del Sitio -->
+            <div class="text-3xl font-extrabold tracking-wider">
+                BIENES RAÍCES
+            </div>
+
+            <!-- Botón de Menú Móvil (Hamburguesa) -->
+            <button id="menu-toggle" class="md:hidden p-2 rounded-lg text-white transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+
+            <!-- Barra de Navegación (Desktop) -->
+            <nav class="hidden md:block">
+                <ul class="flex space-x-6 text-sm font-medium">
+                    <!-- Enlace a la página actual (resaltado) -->
+                    <li><a href="index.html" class="hover:text-amber-400 transition-colors duration-200 border-b-2 border-transparent pb-1 font-semibold">Inicio</a></li>
+                    <!-- Enlace a la página de productos -->
+                    <li><a href="propiedades.html" class="hover:text-amber-400 transition-colors duration-200">Propiedades</a></li>
+                    <!-- Enlace a la página de empresa (ACTUALIZADO) -->
+                    <li><a href="agencia.html" class="hover:text-amber-400 transition-colors duration-200">Agencia</a></li>
+                    <!-- Enlace a Contacto AGREGADO -->
+                    <li><a href="contacto.html" class="hover:text-amber-400 transition-colors duration-200">Contacto</a></li>
+                </ul>
+            </nav>
+            
+        </div>
+        
+        <!-- Menú desplegable para móviles -->
+        <div id="mobile-menu" class="hidden md:hidden w-full bg-gray-900/90 text-white border-t border-gray-700">
+            <ul class="flex flex-col space-y-1 p-4 text-base font-medium">
+                <li><a href="index.html" class="block py-2 px-3 text-amber-400 font-semibold rounded-lg">Inicio</a></li>
+                <li><a href="propiedades.html" class="block py-2 px-3 hover:bg-gray-700 rounded-lg">Propiedades</a></li>
+                <!-- Enlace a la página de empresa (ACTUALIZADO) -->
+                <li><a href="agencia.html" class="block py-2 px-3 hover:bg-gray-700 rounded-lg">Agencia</a></li>
+                <!-- Enlace a Contacto AGREGADO -->
+                <li><a href="contacto.html" class="block py-2 px-3 hover:bg-gray-700 rounded-lg">Contacto</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Sección Principal (Hero Section) -->
+    <section id="hero" class="relative h-[80vh] bg-cover bg-center flex items-center" 
+             style="background-image: url('fondo.jpg')">
+        
+        <!-- Overlay oscuro semi-transparente -->
+        <div class="absolute inset-0 bg-black/60"></div>
+        
+        <!-- Contenido de Texto y Botón -->
+        <div class="container mx-auto px-4 md:px-20 relative z-10 text-white">
+            <div class="max-w-3xl">
+                <!-- Título principal (<h1>) -->
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 shadow-text">
+                    ENCUENTRA LA CASA DE TUS SUEÑOS.
+                </h1>
+                
+                <!-- Subtítulo (<p>) -->
+                <p class="lg:text-xl mb-8 font-light">
+                    Explora nuestra cartera exclusiva de propiedades en venta y renta. Tu nuevo hogar te espera.
+                </p>
+                
+                <!-- Botón de Llamada a la Acción -->
+                <a href="propiedades.html"
+                    class="inline-block bg-[#0056b3] hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-xl shadow-xl transition-all duration-300 transform hover:scale-[1.03] text-lg">
+                    Ver Propiedades Destacadas
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Introductoria (Marcador de posición) -->
+<section id="acerca-de" class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4 md:px-8">
+        <h2 class="text-4xl font-bold text-gray-800 mb-6 border-b-4 border-[#0056b3] inline-block pb-2">Sobre Nuestra Agencia</h2>
+        <p class="text-gray-600 max-w-4xl mb-8">
+            Somos líderes en el mercado inmobiliario, con más de 20 años conectando personas con las propiedades perfectas. Ofrecemos asesoría personalizada y transparencia total en cada transacción.
+        </p>
+        
+        <img 
+            src="fondo2.jpg" 
+            alt="Oficina de la agencia inmobiliaria con equipo trabajando." 
+            class="w-full h-auto block rounded-xl shadow-lg"
+        >
+
+    </div>
+</section>
+    
+    <!-- Sección: Nuestros Servicios -->
+    <section class="services-section py-16 md:py-24" style="background-color: #f5f9fe;">
+        <div class="container mx-auto px-4 md:px-8">
+            <!-- Encabezado -->
+            <div class="section-header text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4 inline-block pb-2">Nuestros Servicios Inmobiliarios</h2>
+                <p class="text-lg text-gray-600 max-w-4xl mx-auto">Soluciones completas para la compra, venta y arrendamiento de bienes inmuebles.</p>
+            </div>
+
+            <!-- Contenedor de Tarjetas -->
+    <div class="cards-container grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+
+    <div class="service-card relative overflow-hidden rounded-xl shadow-lg transition-all duration-300 transform hover:shadow-2xl hover:scale-[1.02] bg-white">
+        
+        <div class="card-image h-80">
+            <img src="img1.jpg" alt="Casas de lujo en venta" class="w-full h-full object-cover rounded-t-xl">
+        </div>
+        
+        <div class="card-content py-4 px-6">
+            <h3 class="text-xl font-bold text-gray-800 mb-1">Venta de Propiedades</h3>
+            <p class="text-xs sm:text-sm text-gray-600">Asesoramos en la compra y venta de inmuebles residenciales, comerciales e industriales, garantizando el mejor precio del mercado y un proceso legal seguro.</p>
+        </div>
+        
+    </div>
+
+    <div class="service-card relative overflow-hidden rounded-xl shadow-lg transition-all duration-300 transform hover:shadow-2xl hover:scale-[1.02] bg-white">
+        
+        <div class="card-image h-80">
+            <img src="img2.jpg" alt="Apartamentos en renta" class="w-full h-full object-cover rounded-t-xl">
+        </div>
+        
+        <div class="card-content py-4 px-6">
+            <h3 class="text-xl font-bold text-gray-800 mb-1">Renta y Arrendamiento</h3>
+            <p class="text-xs sm:text-sm text-gray-600">Gestión integral de alquileres de corto y largo plazo. Encontramos inquilinos calificados y nos encargamos de la administración completa del inmueble.</p>
+        </div>
+        
+    </div>
+
+</div>
+    </section>
+
+    <!-- Nueva Sección: Explora Nuestras Categorías (Galería) -->
+    <section id="calidad-azmol" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4 md:px-8">
+            <!-- Encabezado -->
+            <div class="text-center mb-12">
+                <!-- Se utiliza h2 para mantener la jerarquía semántica, pero con tamaño de h1 -->
+                <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-2">Explora Nuestras Categorías</h2>
+                <p class="text-xl text-gray-500 max-w-xl mx-auto">Un vistazo a los tipos de inmuebles que manejamos.</p>
+            </div>
+
+            <!-- Galería Principal (4 imágenes) -->
+            <!-- Se han modificado las tarjetas para ser más largas verticalmente (h-72 y md:h-96) -->
+            <div class="gallery-container max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 p-4 rounded-2xl shadow-xl bg-gray-50">
+                
+                <!-- Tarjeta 1: Apartamentos -->
+                <div class="main-gallery-card cursor-pointer rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg hover:scale-[1.05] h-72 md:h-96">
+                    <img src="img3.jpeg" alt="Apartamentos modernos en el centro" class="w-full h-full object-cover">
+                </div>
+
+                <!-- Tarjeta 2: Casas -->
+                <div class="main-gallery-card cursor-pointer rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg hover:scale-[1.05] h-72 md:h-96">
+                    <img src="img4.jpg" alt="Casas unifamiliares con jardín" class="w-full h-full object-cover">
+                </div>
+
+                <!-- Tarjeta 3: Terrenos -->
+                <div class="main-gallery-card cursor-pointer rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg hover:scale-[1.05] h-72 md:h-96">
+                    <img src="img5.jpg" alt="Terrenos para desarrollo" class="w-full h-full object-cover">
+                </div>
+
+                <!-- Tarjeta 4: Oficinas -->
+                <div class="main-gallery-card cursor-pointer rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg hover:scale-[1.05] h-72 md:h-96">
+                    <img src="img6.jpeg" alt="Espacios de oficina y locales comerciales" class="w-full h-full object-cover">
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal/Lightbox para ver imágenes en tamaño completo -->
+    <div id="image-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-black bg-opacity-90 p-4 transition-opacity duration-300" role="dialog" aria-modal="true" aria-labelledby="modal-caption">
+        
+        <!-- Botón de Cerrar -->
+        <button id="close-modal" class="absolute top-4 right-4 text-white text-4xl hover:text-gray-400 transition-colors z-[101]">
+            &times;
+        </button>
+
+        <!-- Contenedor de la Imagen y Leyenda -->
+        <div class="max-w-full max-h-full flex flex-col items-center">
+            <!-- Imagen mostrada en el modal -->
+            <img id="modal-image" src="" alt="Vista ampliada de la propiedad" class="max-w-[90vw] max-h-[80vh] object-contain rounded-lg shadow-2xl">
+            
+            <!-- Leyenda/Título de la imagen -->
+            <p id="modal-caption" class="mt-4 text-white text-lg font-semibold text-center max-w-lg"></p>
+        </div>
+    </div>
+    <!-- Fin del Modal -->
+
+    <!-- Footer - Sección 1. Estructura y Estilo General (HTML/CSS) -->
+    <footer class="main-footer bg-[#1E2C3A] text-white py-16 md:py-20">
+        <div class="container mx-auto px-4 md:px-8">
+            
+            <!-- Contenido Principal: Estructura de 3 Columnas (ajustado de 4) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 pb-12">
+                
+                <!-- Columna 1: Contacto Principal -->
+                <div>
+                    <h3 class="text-3xl font-bold mb-3">BIENES RAÍCES</h3>
+                    <p class="text-gray-300 mb-6 text-sm">Estamos aquí para ayudarte a encontrar tu propiedad ideal.</p>
+                    
+                    <!-- Íconos Sociales (Grandes) -->
+                    <div class="flex space-x-4">
+                        <a href="#" aria-label="Facebook" class="text-white hover:text-[#0056b3] transition-colors duration-200 text-3xl">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" aria-label="Instagram" class="text-white hover:text-[#0056b3] transition-colors duration-200 text-3xl">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" aria-label="TikTok" class="text-white hover:text-[#0056b3] transition-colors duration-200 text-3xl">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="#" aria-label="X/Twitter" class="text-white hover:text-[#0056b3] transition-colors duration-200 text-3xl">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" aria-label="Buscador de Propiedades" class="text-white hover:text-[#0056b3] transition-colors duration-200 text-3xl">
+                            <i class="fas fa-building"></i> <!-- Logo de edificio/inmobiliaria -->
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Columna 2: Desarrollador Web -->
+                <div>
+                    <h4 class="text-md font-normal mb-3 uppercase tracking-wider">DESARROLLADOR WEB</h4>
+                    <p class="text-gray-300 mb-4">
+                        <span class="font-semibold block">Ing. Edgar Lomas</span>
+                        <span class="block">Correo: edgarlms131@gmail.com</span>
+                    </p>
+                </div>
+                
+                <!-- Columna 3 (Original Columna 4): EMAIL (Información principal de la empresa) -->
+                <div>
+                    <h4 class="text-md font-normal mb-3 uppercase tracking-wider">CONTACTO</h4>
+                    <p class="text-gray-300 mb-4">
+                        <span class="block">info@bienesraices.com</span>
+                        <span class="font-semibold block">+52 55 1234 5678</span>
+                    </p>
+                </div>
+
+                <!-- Columna 3: Social icons (ELIMINADA) -->
+                <!-- Columna 4: EMAIL (Mantenida como Columna 3) -->
+
+            </div>
+
+            <!-- Fila Inferior (Copyright y Separador) -->
+            <div class="pt-8 border-t border-gray-700/50 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 space-y-4 md:space-y-0">
+                
+                <!-- Copyright -->
+                <div>
+                    &copy; 2025. All rights reserved.
+                </div>
+                
+                <!-- Etiqueta de Diseño (ELIMINADA) -->
+            </div>
+        </div>
+    </footer>
+
+    <!-- 4. Requisitos de Interactividad (JavaScript) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.getElementById('main-header');
+            const scrollThreshold = 100; // La clase se añade después de 100px de scroll.
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const galleryItems = document.querySelectorAll('.main-gallery-card'); // Elementos de la galería
+
+            // Elementos del Modal (Lightbox) - NUEVOS
+            const modal = document.getElementById('image-modal');
+            const modalImage = document.getElementById('modal-image');
+            const modalCaption = document.getElementById('modal-caption');
+            const closeModalBtn = document.getElementById('close-modal');
+
+
+            /**
+             * Maneja el evento de scroll para aplicar el estilo fijo al header.
+             */
+            function handleScroll() {
+                // window.scrollY es más fiable que document.documentElement.scrollTop
+                if (window.scrollY > scrollThreshold) {
+                    // Añadir clases de fondo sólido y sombra
+                    header.classList.add('scrolled-nav');
+                    header.classList.remove('bg-transparent', 'text-white');
+                    header.classList.add('text-gray-900');
+                    // Cambiar el color del ícono del menú de hamburguesa a oscuro
+                    menuToggle.classList.remove('text-white');
+                    menuToggle.classList.add('text-gray-700'); // Aseguramos que el color sea oscuro para el fondo blanco
+                    // Si el menú móvil está abierto y el header está oscuro, asegurar que el menú móvil tenga un fondo para evitar superposición extraña
+                    if (!mobileMenu.classList.contains('hidden')) {
+                         mobileMenu.classList.remove('bg-gray-900/90', 'text-white');
+                         mobileMenu.classList.add('bg-white', 'text-gray-900');
+                    }
+                } else {
+                    // Remover clases para volver a transparente
+                    header.classList.remove('scrolled-nav', 'text-gray-900');
+                    header.classList.add('bg-transparent', 'text-white');
+                    // Cambiar el color del ícono del menú de hamburguesa a blanco
+                    menuToggle.classList.remove('text-gray-700'); // Removido el color oscuro
+                    menuToggle.classList.add('text-white');
+                    // Si el menú móvil está abierto y el header es transparente, asegurar que el menú móvil tenga un fondo para mayor legibilidad
+                    if (!mobileMenu.classList.contains('hidden')) {
+                         mobileMenu.classList.remove('bg-white', 'text-gray-900');
+                         mobileMenu.classList.add('bg-gray-900/90', 'text-white');
+                    }
+                }
+            }
+            
+            // Lógica para el menú móvil
+            menuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                // Al abrir/cerrar el menú, re-evaluar el estado del scroll para el fondo del menú
+                handleScroll();
+            });
+
+            // Lógica para cerrar el modal
+            function closeModal() {
+                modal.classList.add('hidden');
+            }
+
+            // Lógica para la interacción de la galería (Abre el modal)
+            galleryItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const img = item.querySelector('img');
+                    const src = img.getAttribute('src');
+                    const alt = img.getAttribute('alt');
+
+                    // 1. Cargar datos
+                    modalImage.setAttribute('src', src);
+                    modalCaption.textContent = alt;
+                    
+                    // 2. Mostrar modal
+                    modal.classList.remove('hidden');
+                    
+                    // console.log("Abriendo modal para:", alt); // Comentario de depuración
+                });
+            });
+
+            // Lógica para cerrar el modal al hacer clic en el botón X
+            closeModalBtn.addEventListener('click', closeModal);
+
+            // Lógica para cerrar el modal al hacer clic en el fondo oscuro (fuera de la imagen)
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+
+
+            // Escuchar el evento de scroll
+            window.addEventListener('scroll', handleScroll);
+
+            // Ejecutar una vez al cargar para manejar la recarga de la página si el scroll no está en 0
+            handleScroll();
+        });
+    </script>
+
+</body>
+</html>

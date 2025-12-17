@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto y Oficinas - BIENES RAÍCES</title>
+    <link rel="icon" href="logo.ico">
+    <!-- Carga de Tailwind CSS para un estilizado rápido y responsive -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuración para la fuente Inter (moderna sans-serif) -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7; /* Fondo ligeramente gris para contraste */
+            color: #333333;
+            padding-top: 80px; /* Espacio para el header fijo */
+        }
+        /* Estilo para el enlace activo */
+        .nav-link-active {
+            font-weight: 600;
+            color: #0056b3; /* Color de acento azul */
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 4px;
+        }
+    </style>
+      <!-- Font Awesome CDN para íconos sociales -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJqQ62rFk+2SDAA8V7n2U7FzF5p0tE0P7K4W71o+oF+G4+E5/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <!-- Encabezado Fijo (Header) -->
+    <!-- Clase `lg:py-5` añadida para más espacio vertical en desktop -->
+    <header class="fixed top-0 w-full bg-white shadow-lg z-50">
+        <div class="container mx-auto flex justify-between items-center px-4 py-4 md:px-8 lg:py-5">
+            
+            <!-- Logotipo/Nombre del Sitio -->
+            <div class="text-2xl md:text-3xl font-extrabold tracking-wider text-gray-800">
+                BIENES RAÍCES
+            </div>
+
+            <!-- Botón de Menú Móvil (Hamburguesa) -->
+            <button id="menu-toggle" class="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+
+            <!-- Menú de Navegación (Desktop) -->
+            <nav id="main-nav" class="hidden md:block">
+                <ul class="flex space-x-6 lg:space-x-10 text-base font-medium text-gray-600">
+                    <li><a href="index.html" class="hover:text-gray-900 transition-colors duration-200">Inicio</a></li>
+                    <li><a href="propiedades.html" class="hover:text-gray-900 transition-colors duration-200">Propiedades</a></li>
+                    <li><a href="agencia.html" class="hover:text-gray-900 transition-colors duration-200">Agencia</a></li>
+                    <li><a href="contacto.html" class="nav-link-active transition-colors duration-200">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Menú desplegable para móviles -->
+        <div id="mobile-menu" class="hidden md:hidden w-full bg-gray-50 border-t border-gray-200">
+            <ul class="flex flex-col space-y-2 p-4 text-gray-700">
+                <li><a href="index.html" class="block py-2 px-3 hover:bg-gray-100 rounded-lg">Inicio</a></li>
+                <li><a href="propiedades.html" class="block py-2 px-3 hover:bg-gray-100 rounded-lg">Propiedades</a></li>
+                <li><a href="agencia.html" class="block py-2 px-3 hover:bg-gray-100 rounded-lg">Agencia</a></li>
+                <li><a href="contacto.html" class="block py-2 px-3 nav-link-active bg-gray-100 rounded-lg">Contacto</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Sección Principal (<main>) -->
+    <main class="container mx-auto px-4 py-10 md:py-16">
+
+        <!-- Información de Contacto General (Ahora con Botones) -->
+        <section class="mb-16 md:mb-20 text-center">
+            <!-- Título ajustado para ser grande y llamativo en todos los tamaños -->
+            <h2 class="text-4xl sm:text-4xl md:text-5xl font-extrabold text-gray-800 mb-8">Contacto Inmediato</h2>
+            <p class="text-lg text-gray-600 max-w-4xl mx-auto mb-10">
+                ¿Buscas comprar, vender o rentar? Nuestro equipo está listo para asistirte con tu próxima inversión inmobiliaria.
+            </p>
+            <!-- Flex column en móvil, row en desktop. Separación ajustada. -->
+            <div class="flex flex-col md:flex-row justify-center space-y-6 md:space-y-0 md:space-x-12">
+                
+                <!-- Tarjeta de Teléfono (Convertido a botón) -->
+                <div class="p-6 bg-white rounded-xl shadow-xl border-t-4 border-blue-600 flex flex-col items-center w-full md:w-auto hover:shadow-2xl transition-shadow duration-300">
+                    <h3 class="text-xl font-bold text-gray-700 mb-4">Llamar a un Agente</h3>
+                    <a href="tel:+525512345678" 
+                        class="text-lg bg-blue-600 text-white py-3 px-6 rounded-full hover:bg-blue-700 transition-colors duration-200 inline-flex items-center space-x-3 shadow-lg font-medium">
+                        <i class="fas fa-phone text-xl"></i>
+                        <span>+52 55 1234 5678</span>
+                    </a>
+                </div>
+
+                <!-- Tarjeta de Correo Electrónico (Convertido a botón) -->
+                <div class="p-6 bg-white rounded-xl shadow-xl border-t-4 border-blue-600 flex flex-col items-center w-full md:w-auto hover:shadow-2xl transition-shadow duration-300">
+                    <h3 class="text-xl font-bold text-gray-700 mb-4">Enviar una Consulta</h3>
+                    <a href="mailto:contacto@inmobiliariaglobal.com" 
+                        class="text-lg bg-blue-600 text-white py-3 px-6 rounded-full hover:bg-blue-700 transition-colors duration-200 inline-flex items-center space-x-3 shadow-lg font-medium">
+                        <i class="fas fa-envelope text-xl"></i>
+                        <span>contacto@inmobiliariaglobal.com</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Encabezado de la Sección (Ubicaciones) -->
+        <div class="section-header text-center mb-12 md:mb-16">
+            <h1 class="text-4xl sm:text-4xl md:text-5xl font-extrabold text-gray-800 mb-4">Nuestras Oficinas</h1>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                Visita nuestros centros de atención y gestión de propiedades en las siguientes ubicaciones.
+            </p>
+        </div>
+
+        <!-- Contenedor de Ubicaciones (Dos Columnas Responsivas) -->
+        <!-- Ajuste de gap para mejor separación en desktop -->
+        <div class="locations-wrapper grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 max-w-6xl mx-auto">
+
+            <!-- Columna 1: Oficina de Ventas -->
+            <div class="space-y-8">
+                <!-- Detalles de la Oficina de Ventas -->
+                <section class="location-card office-details bg-white rounded-xl shadow-2xl hover:shadow-3xl transition-shadow duration-300">
+                    <div class="p-6 md:p-8 lg:p-10">
+                        <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4 border-b-2 pb-2 border-gray-200 flex items-center">
+                            <i class="fas fa-city text-blue-600 mr-3"></i>
+                            Oficina Principal de Ventas
+                        </h2>
+                        <p class="address text-gray-700 mb-4 text-base">
+                            <span class="font-semibold block">Dirección:</span>
+                            Av. Principal 123, Zona Centro, Monterrey, N.L.
+                        </p>
+                        <h3 class="text-xl font-bold text-gray-800 mt-6">Horario</h3>
+                        <p class="hours text-gray-600">Lunes a Sábado: 9:00 - 19:00</p>
+                    </div>
+                </section>
+
+                <!-- Mapa de la Oficina Central (Placeholder) -->
+                <section class="location-card office-map bg-white rounded-xl shadow-2xl overflow-hidden">
+                    <!-- Mapa de Google Maps (Lazy Loaded) -->
+                    <div class="map-container relative w-full" style="padding-bottom: 75%; height: 0;">
+                        <iframe 
+                            data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1000!2d-100.41910!3d25.68530!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDQxJzA3LjEiTiAxMDDCsDI1JzA4LjciVw!5e0!3m2!1ses-419!2s!4v1678881234567" 
+                            title="Mapa de la Oficina Principal de Ventas"
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade" 
+                            class="map-iframe w-full h-full absolute top-0 left-0 border-0" 
+                            style="min-height: 300px;">
+                        </iframe>
+                        <div class="map-placeholder absolute inset-0 bg-gray-200 flex items-center justify-center text-gray-600 font-medium">
+                            Cargando mapa de la oficina...
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Columna 2: Centro de Renta y Gestión -->
+            <div class="space-y-8">
+                <!-- Detalles del Centro de Renta y Gestión -->
+                <section class="location-card warehouse-details bg-white rounded-xl shadow-2xl hover:shadow-3xl transition-shadow duration-300">
+                    <div class="p-6 md:p-8 lg:p-10">
+                        <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4 border-b-2 pb-2 border-gray-200 flex items-center">
+                            <i class="fas fa-building text-blue-600 mr-3"></i>
+                            Centro de Renta y Gestión
+                        </h2>
+                        <p class="address text-gray-700 mb-4 text-base">
+                            <span class="font-semibold block">Dirección:</span>
+                            Calle de la Renta 456, Col. Ejecutiva, San Pedro, N.L.
+                        </p>
+                        <h3 class="text-xl font-bold text-gray-800 mt-6">Horario</h3>
+                        <p class="hours text-gray-600">Lunes a Viernes: 9:00 - 18:00</p>
+                    </div>
+                </section>
+
+                <!-- Mapa del Centro de Renta y Gestión (Placeholder) -->
+                <section class="location-card warehouse-map bg-white rounded-xl shadow-2xl overflow-hidden">
+                    <!-- Mapa de Google Maps (Lazy Loaded) -->
+                    <div class="map-container relative w-full" style="padding-bottom: 75%; height: 0;">
+                        <iframe 
+                            data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1000!2d-100.41800!3d25.68530!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDQxJzA3LjEiTiAxMDDCsDI1JzA4LjciVw!5e0!3m2!1ses-419!2s!4v1678881234568" 
+                            title="Mapa del Centro de Renta y Gestión"
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade" 
+                            class="map-iframe w-full h-full absolute top-0 left-0 border-0" 
+                            style="min-height: 300px;">
+                        </iframe>
+                        <div class="map-placeholder absolute inset-0 bg-gray-200 flex items-center justify-center text-gray-600 font-medium">
+                            Cargando mapa de la oficina...
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Sección de Preguntas Frecuentes (FAQ) -->
+    <section class="container mx-auto px-4 py-10 md:py-16">
+        <h2 class="text-4xl sm:text-4xl md:text-5xl font-extrabold text-gray-800 mb-12 text-center">Preguntas Frecuentes sobre Inmuebles</h2>
+
+        <div class="max-w-4xl mx-auto space-y-6 bg-white p-6 md:p-8 rounded-xl shadow-lg">
+            <!-- FAQ Item 1: Contenedor para mejor separación visual -->
+            <div class="py-3 border-b border-gray-100 last:border-b-0">
+                <h3 class="text-lg md:text-xl font-semibold text-blue-700 mb-1">¿Qué tipo de propiedades manejan?</h3>
+                <p class="text-gray-700 text-base">Casas, apartamentos, terrenos comerciales y propiedades de inversión.</p>
+            </div>
+            <!-- FAQ Item 2 -->
+            <div class="py-3 border-b border-gray-100 last:border-b-0">
+                <h3 class="text-lg md:text-xl font-semibold text-blue-700 mb-1">¿Cómo se inicia el proceso de compra o renta?</h3>
+                <p class="text-gray-700 text-base">Contáctenos por teléfono o email para asignar un agente especializado a su caso.</p>
+            </div>
+            <!-- FAQ Item 3 -->
+            <div class="py-3 border-b border-gray-100 last:border-b-0">
+                <h3 class="text-lg md:text-xl font-semibold text-blue-700 mb-1">¿En qué zonas operan principalmente?</h3>
+                <p class="text-gray-700 text-base">Cubrimos las áreas metropolitanas clave y zonas de alto crecimiento en la región.</p>
+            </div>
+            <!-- FAQ Item 4 -->
+            <div class="py-3 border-b border-gray-100 last:border-b-0">
+                <h3 class="text-lg md:text-xl font-semibold text-blue-700 mb-1">¿Ofrecen asesoría legal o hipotecaria?</h3>
+                <p class="text-gray-700 text-base">Sí, proporcionamos asesoría legal y conexión con brókers hipotecarios certificados.</p>
+            </div>
+            <!-- FAQ Item 5 -->
+            <div class="py-3">
+                <h3 class="text-lg md:text-xl font-semibold text-blue-700 mb-1">¿Cuánto tiempo toma concretar una venta?</h3>
+                <p class="text-gray-700 text-base">El tiempo varía, pero nuestros agentes se esfuerzan por cerrar transacciones en 30 a 60 días.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer simple para consistencia -->
+    <footer class="main-footer bg-[#1E2C3A] text-white py-12 md:py-16">
+        <div class="container mx-auto px-4 md:px-8">
+            
+            <!-- Contenido Principal: Estructura de 3 Columnas (mejor espaciado en desktop) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16 pb-8 md:pb-12 border-b border-gray-700/50">
+                
+                <!-- Columna 1: Contacto Principal / Logo -->
+                <div class="mb-4 md:mb-0">
+                    <h3 class="text-3xl font-bold mb-3">BIENES RAÍCES</h3>
+                    <p class="text-gray-300 mb-6 text-sm">Expertos en compra, venta y arrendamiento de propiedades.</p>
+                    
+                    <!-- Íconos Sociales (Grandes) -->
+                    <div class="flex space-x-5">
+                        <a href="#" aria-label="Facebook" class="text-white hover:text-[#0056b3] transition-colors duration-200 text-2xl">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" aria-label="Instagram" class="text-white hover:text-[#0056b3] transition-colors duration-200 text-2xl">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" aria-label="TikTok" class="text-white hover:text-[#0056b3] transition-colors duration-200 text-2xl">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="#" aria-label="X/Twitter" class="text-white hover:text-[#0056b3] transition-colors duration-200 text-2xl">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" aria-label="Página Principal" class="text-white hover:text-[#0056b3] transition-colors duration-200 text-2xl">
+                            <i class="fas fa-home"></i> 
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Columna 2: Desarrollador Web -->
+                <div class="mt-4 md:mt-0">
+                    <h4 class="text-sm font-semibold mb-3 uppercase tracking-wider text-gray-400">DESARROLLADOR WEB</h4>
+                    <p class="text-gray-300 text-sm">
+                        <span class="font-semibold block">Ing. Edgar Lomas</span>
+                        <span class="block">Correo: edgarlms131@gmail.com</span>
+                    </p>
+                </div>
+                
+                <!-- Columna 3: EMAIL (Información principal de la empresa) -->
+                <div class="mt-4 md:mt-0">
+                    <h4 class="text-sm font-semibold mb-3 uppercase tracking-wider text-gray-400">CONTACTO DIRECTO</h4>
+                    <p class="text-gray-300 text-sm">
+                        <span class="block">contacto@inmobiliariaglobal.com</span>
+                        <span class="font-semibold block">+52 55 1234 5678</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Fila Inferior (Copyright) -->
+            <div class="pt-4 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 space-y-3 md:space-y-0">
+                
+                <!-- Copyright -->
+                <div>
+                    &copy; 2025 BIENES RAÍCES. Todos los derechos reservados.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript para el Menú Móvil y Lazy Loading de Mapas -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            // 1. Toggle (mostrar/ocultar) el menú móvil
+            menuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // 2. Lazy Loading de Google Maps con Intersection Observer
+            const mapIframes = document.querySelectorAll('.map-iframe');
+
+            const observerOptions = {
+                root: null, // El viewport
+                rootMargin: '100px', // Cargar 100px antes de que entre en el viewport
+                threshold: 0.01
+            };
+
+            const mapObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const iframe = entry.target;
+                        const dataSrc = iframe.getAttribute('data-src');
+
+                        if (dataSrc) {
+                            iframe.setAttribute('src', dataSrc);
+                            iframe.removeAttribute('data-src');
+                            
+                            // Ocultar el placeholder
+                            const placeholder = iframe.nextElementSibling;
+                            if (placeholder && placeholder.classList.contains('map-placeholder')) {
+                                placeholder.remove();
+                            }
+                            
+                            observer.unobserve(iframe); // Dejar de observar una vez que se ha cargado
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            mapIframes.forEach(iframe => {
+                mapObserver.observe(iframe);
+            });
+        });
+    </script>
+
+</body>
+</html>

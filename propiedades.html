@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propiedades - BIENES RAÍCES</title>
+    <link rel="icon" href="logo.ico">
+    <!-- Carga de Tailwind CSS para un estilizado rápido y responsive -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuración para la fuente Inter (moderna sans-serif) -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFFFFF;
+            color: #333333;
+        }
+        /* Estilo para el enlace activo */
+        .nav-link-active {
+            font-weight: 600;
+            color: #0056b3; /* Color de acento azul */
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 4px;
+        }
+        /* Estilo para ocultar el modal por defecto */
+        .modal-overlay {
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        /* Estilo para mostrar el modal */
+        .modal-overlay.open {
+            visibility: visible;
+            opacity: 1;
+        }
+        /* Clase para mantener un tamaño consistente de la imagen en la tarjeta */
+        .product-image-container {
+            height: 200px; /* Altura fija para el contenedor de la imagen */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+    <!-- Font Awesome CDN para íconos sociales -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJqQ62rFk+2SDAA8V7n2U7FzF5p0tE0P7K4W71o+oF+G4+E5/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <!-- Header y Navegación (Actualizado) -->
+    <header class="sticky top-0 bg-white shadow-md z-50">
+        <div class="container mx-auto flex justify-between items-center px-4 py-4 md:px-8">
+            
+            <!-- Logotipo/Nombre del Sitio -->
+            <div class="text-3xl font-extrabold tracking-wider text-gray-800">
+                BIENES RAÍCES
+            </div>
+
+            <!-- Botón de Menú Móvil (Hamburguesa) -->
+            <button id="menu-toggle" class="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+
+            <!-- Barra de Navegación (Desktop) -->
+            <nav id="main-nav" class="hidden md:block">
+                <ul class="flex space-x-8 text-base font-medium text-gray-600">
+                    <!-- Enlace a la página de inicio -->
+                    <li><a href="index.html" class="hover:text-gray-900 transition-colors duration-200">Inicio</a></li>
+                    <!-- Enlace activo (AHORA PROPIEDADES.HTML) -->
+                    <li><a href="propiedades.html" class="nav-link-active transition-colors duration-200">Propiedades</a></li>
+                    <!-- Enlace a la página de agencia (ANTES empresa.html) -->
+                    <li><a href="agencia.html" class="hover:text-gray-900 transition-colors duration-200">Agencia</a></li>
+                    <!-- Enlace a Contacto -->
+                    <li><a href="contacto.html" class="hover:text-gray-900 transition-colors duration-200">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Menú desplegable para móviles -->
+        <div id="mobile-menu" class="hidden md:hidden w-full bg-gray-50 border-t border-gray-200">
+            <ul class="flex flex-col space-y-2 p-4 text-gray-700">
+                <!-- Enlace a la página de inicio (mobile) -->
+                <li><a href="index.html" class="block py-2 px-3 hover:bg-gray-100 rounded-lg">Inicio</a></li>
+                <!-- Enlace activo (mobile - AHORA PROPIEDADES.HTML) -->
+                <li><a href="propiedades.html" class="block py-2 px-3 nav-link-active bg-gray-100 rounded-lg">Propiedades</a></li>
+                 <!-- Enlace a la página de agencia (ANTES empresa.html) -->
+                <li><a href="agencia.html" class="block py-2 px-3 hover:bg-gray-100 rounded-lg">Agencia</a></li>
+                <!-- Enlace a Contacto -->
+                <li><a href="contacto.html" class="block py-2 px-3 hover:bg-gray-100 rounded-lg">Contacto</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Sección Principal (Main Content - Actualizado) -->
+    <main class="container mx-auto px-4 py-16 md:py-24">
+
+        <!-- Título Principal y Eslogan -->
+        <div class="text-center mb-12 md:mb-16">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-2">Propiedades en Venta y Renta</h1>
+            <p class="text-lg md:text-xl text-gray-600">Encuentra tu hogar o inversión ideal con nosotros</p>
+        </div>
+
+        <!-- Contenedor de Propiedades (CSS Grid) - Ahora se llenará con JavaScript -->
+        <div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-16">
+            <!-- Las tarjetas de propiedad serán inyectadas aquí por JS -->
+        </div>
+
+        <!-- Nuevo Apartado: Opiniones (MODIFICADO: Solo se muestra la imagen, sin texto debajo) -->
+        <section class="mt-20 pt-10 border-t border-gray-200">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-4 text-center">Opiniones de Clientes</h2>
+            <p class="text-lg md:text-xl text-gray-600 mb-10 text-center">Historias de éxito en la búsqueda de propiedades</p>
+
+            <!-- Contenedor de Opiniones (2 columnas en desktop, 1 en móvil) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                
+                <!-- Espacio para la Opinión 1 (Solo imagen) -->
+                <div class="bg-gray-100 rounded-xl shadow-md border-2 border-[#0056b3]/20 overflow-hidden">
+                    <img src="op1.png" 
+                             alt="Opinión de Cliente Satisfecho 1" 
+                             class="w-full h-auto object-cover">
+                    <!-- Se eliminó el div con el texto de la opinión -->
+                </div>
+
+                <!-- Espacio para la Opinión 2 (Solo imagen) -->
+                <div class="bg-gray-100 rounded-xl shadow-md border-2 border-[#0056b3]/20 overflow-hidden">
+                    <img src="op2.png" 
+                             alt="Opinión de Cliente Satisfecho 2" 
+                             class="w-full h-auto object-cover">
+                    <!-- Se eliminó el div con el texto de la opinión -->
+                </div>
+            </div>
+        </section>
+        <!-- Fin de Apartado: Opiniones -->
+
+    </main>
+    
+    <!-- Modal de Detalles de la Propiedad (Oculto por defecto - Actualizado) -->
+    <div id="product-modal" class="modal-overlay fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center p-4 z-[99]">
+        
+        <!-- Contenedor del Modal (Responsive) -->
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto transform scale-100 transition-transform duration-300">
+            
+            <!-- Botón de Cerrar -->
+            <div class="flex justify-end p-4">
+                <button id="close-modal-btn" class="text-gray-500 hover:text-gray-900 transition-colors p-2 rounded-full hover:bg-gray-100">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+
+            <!-- Contenido de la Propiedad (Grid interno para Desktop, Stacked para Mobile) -->
+            <div class="p-6 md:p-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Columna de Imagen -->
+                <div class="md:col-span-1 flex justify-center items-start">
+                    <!-- El src de la imagen del modal ahora usa property.image_url -->
+                    <img id="modal-image" 
+                         src="" 
+                         alt="Imagen Completa de la Propiedad" 
+                         class="w-full max-w-[300px] h-auto object-contain rounded-lg shadow-md border p-2"
+                         onerror="this.onerror=null; this.src='https://placehold.co/400x600/cccccc/000000?text=Propiedad+No+Disponible';"
+                    >
+                </div>
+
+                <!-- Columna de Texto y Detalles -->
+                <div class="md:col-span-2 text-left">
+                    <h2 id="modal-name" class="text-3xl md:text-4xl font-extrabold text-gray-800 mb-2"></h2>
+                    <p id="modal-short-description" class="text-lg text-[#0056b3] font-semibold mb-4"></p>
+                    
+                    <div class="bg-gray-50 p-4 rounded-lg mb-6">
+                        <h3 class="text-xl font-bold text-gray-700 mb-1">Precio / Renta</h3>
+                        <p id="modal-price" class="text-3xl font-bold text-green-600"></p>
+                    </div>
+
+                    <h3 class="text-xl font-bold text-gray-700 mb-2">Características Principales</h3>
+                    <p id="modal-long-description" class="text-gray-600 leading-relaxed"></p>
+
+                    <!-- Botón de Contacto/Solicitud -->
+                    <a href="contacto.html" class="mt-8 inline-block bg-[#0056b3] text-white px-6 py-3 rounded-lg font-bold shadow-lg 
+                                         hover:bg-blue-700 transition-colors duration-200">
+                        Agendar Visita / Consultar
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Fin del Modal -->
+
+    <!-- Footer simple para completar la página (Actualizado) -->
+   <footer class="main-footer bg-[#1E2C3A] text-white py-16 md:py-20">
+        <div class="container mx-auto px-4 md:px-8">
+            
+            <!-- Contenido Principal: Estructura de 3 Columnas (ajustado de 4) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 pb-12">
+                
+                <!-- Columna 1: Contacto Principal -->
+                <div>
+                    <h3 class="text-3xl font-bold mb-3">BIENES RAÍCES</h3>
+                    <p class="text-gray-300 mb-6 text-sm">El futuro de tu patrimonio comienza aquí.</p>
+                    
+                    <!-- Íconos Sociales (Grandes) -->
+                    <div class="flex space-x-4">
+                        <a href="#" aria-label="Facebook" class="text-white hover:text-[#0056b3] transition-colors duration-200 text-3xl">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" aria-label="Instagram" class="text-white hover:text-[#0056b3] transition-colors duration-200 text-3xl">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" aria-label="TikTok" class="text-white hover:text-[#0056b3] transition-colors duration-200 text-3xl">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="#" aria-label="X/Twitter" class="text-white hover:text-[#0056b3] transition-colors duration-200 text-3xl">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" aria-label="DISTLUB App" class="text-white hover:text-[#0056b3] transition-colors duration-200 text-3xl">
+                            <i class="fas fa-home"></i> <!-- Icono de casa para bienes raíces -->
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Columna 2: Desarrollador Web -->
+                <div>
+                    <h4 class="text-md font-normal mb-3 uppercase tracking-wider">DESARROLLADOR WEB</h4>
+                    <p class="text-gray-300 mb-4">
+                        <span class="font-semibold block">Ing. Edgar Lomas</span>
+                        <span class="block">Correo: edgarlms131@gmail.com</span>
+                    </p>
+                </div>
+                
+                <!-- Columna 3 (Original Columna 4): CONTACTO PRINCIPAL (Información principal de la empresa) -->
+                <div>
+                    <h4 class="text-md font-normal mb-3 uppercase tracking-wider">CONTACTO PRINCIPAL</h4>
+                    <p class="text-gray-300 mb-4">
+                        <span class="block">ventas@inmueblesmx.com</span>
+                        <span class="font-semibold block">+52 55 1234 5678</span>
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Fila Inferior (Copyright y Separador) -->
+            <div class="pt-8 border-t border-gray-700/50 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 space-y-4 md:space-y-0">
+                
+                <!-- Copyright -->
+                <div>
+                    &copy; 2025. BIENES RAÍCES. All rights reserved.
+                </div>
+                
+                <!-- Etiqueta de Diseño (ELIMINADA) -->
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- JavaScript para el Menú Móvil y la Lógica de Propiedades/Modal (Actualizado) -->
+    <script>
+        // Array de datos de propiedades (10 propiedades)
+        // Se utiliza 'products' para mantener la compatibilidad con el código JS original.
+        const products = [
+            {
+                id: 1,
+                name: "Casa Residencial 'La Hacienda'",
+                short_desc: "Venta | 4 Recámaras, Zona Exclusiva, Monterrey",
+                long_desc: "Lujosa residencia de estilo mexicano contemporáneo. Cuenta con amplios espacios, acabados de mármol y madera de encino, cocina gourmet equipada, alberca privada y seguridad 24/7. Ideal para familias que buscan confort y prestigio. Área de construcción: 550 m², Terreno: 400 m².",
+                price: "$15,500,000 MXN",
+                image_url: "im1.jpg" 
+            },
+            {
+                id: 2,
+                name: "Apartamento Ejecutivo - Centro Histórico",
+                short_desc: "Renta | 2 Recámaras, Amueblado, CDMX",
+                long_desc: "Moderno apartamento en el corazón de la ciudad, a pasos de centros financieros y culturales. Incluye electrodomésticos, gimnasio, roof garden con vista panorámica y vigilancia. Perfecto para profesionales o parejas sin hijos. Superficie: 90 m².",
+                price: "$28,000 MXN / mes",
+                image_url: "im2.png"
+            },
+            {
+                id: 3,
+                name: "Terreno Industrial - Parque Logístico",
+                short_desc: "Venta | Uso Comercial, Acceso a Tráilers, Querétaro",
+                long_desc: "Extenso terreno plano con zonificación industrial de alto impacto. Cuenta con todos los servicios a pie de calle y excelente conectividad a las principales autopistas. Ideal para la construcción de bodegas, naves industriales o centros de distribución. Superficie: 5,000 m².",
+                price: "$9,500,000 MXN",
+                image_url: "im3.jpg"
+            },
+            {
+                id: 4,
+                name: "Loft Minimalista - Colonia Roma",
+                short_desc: "Renta | 1 Recámara, Diseño de Autor, CDMX",
+                long_desc: "Diseño minimalista y vanguardista. Espacio abierto tipo loft con doble altura, mucha luz natural y balcón. Ubicado en una de las colonias más cotizadas, cerca de parques y restaurantes. Servicios incluidos: agua e internet. Superficie: 75 m².",
+                price: "$19,500 MXN / mes",
+                image_url: "https://placehold.co/400x600/db4437/ffffff?text=LOFT+MINIMALISTA"
+            },
+            {
+                id: 5,
+                name: "Casa con Jardín - Zona Cumbres",
+                short_desc: "Venta | 3 Recámaras, Cochera Doble, Monterrey",
+                long_desc: "Acogedora casa con un amplio jardín trasero, ideal para mascotas y reuniones familiares. Recién remodelada con cocina integral y closets nuevos. Excelente ubicación cerca de escuelas y centros comerciales. Superficie: 220 m², Terreno: 180 m².",
+                price: "$3,850,000 MXN",
+                image_url: "https://placehold.co/400x600/4285f4/ffffff?text=CASA+FAMILIAR"
+            },
+            {
+                id: 6,
+                name: "Bodega de Almacenamiento - Zona Industrial",
+                short_desc: "Renta | 800 m², Altura de 10m, Guadalajara",
+                long_desc: "Bodega industrial Clase A con entrada para tráiler, andenes de carga y descarga, piso de alta resistencia y amplio patio de maniobras. Ideal para logística, almacenamiento o manufactura ligera. Disponible para ocupación inmediata.",
+                price: "$85,000 MXN / mes",
+                image_url: "https://placehold.co/400x600/10b981/ffffff?text=BODEGA+CLASE+A"
+            },
+            {
+                id: 7,
+                name: "Departamento de Lujo - Vista al Mar",
+                short_desc: "Venta | 3 Recámaras, Amenidades Premium, Cancún",
+                long_desc: "Impresionante departamento con vistas frontales al mar Caribe. El complejo ofrece acceso directo a la playa, club de piscina, spa, gimnasio y restaurantes. Una oportunidad única de inversión o para vivir frente al mar. Superficie: 180 m².",
+                price: "$750,000 USD",
+                image_url: "https://placehold.co/400x600/70a0d4/ffffff?text=VISTA+AL+MAR"
+            },
+            {
+                id: 8,
+                name: "Terreno Campestre - San Miguel de Allende",
+                short_desc: "Venta | 1,500 m², Uso Habitacional, Escriturado",
+                long_desc: "Lote campestre perfecto para construir una casa de descanso. Ubicado en un fraccionamiento tranquilo con hermoso paisaje y servicios subterráneos. Cerca del centro de San Miguel de Allende, ideal para escapar del ruido de la ciudad.",
+                price: "$1,200,000 MXN",
+                image_url: "https://placehold.co/400x600/8e24aa/ffffff?text=TERRENO+CAMPESTRE"
+            },
+            {
+                id: 9,
+                name: "Oficina Corporativa - Torre Empresarial",
+                short_desc: "Renta | 150 m², Piso 20, Zona Premium",
+                long_desc: "Espacio de oficina premium en renta en la torre más moderna de la ciudad. Vistas espectaculares, seguridad de alta tecnología, acceso 24 horas y estacionamiento para visitas. Ya cuenta con divisiones y acabados de lujo. Superficie: 150 m².",
+                price: "$45,000 MXN / mes",
+                image_url: "https://placehold.co/400x600/ff6f00/ffffff?text=OFICINA+PREMIUM"
+            },
+            {
+                id: 10,
+                name: "Casa Histórica - Colonia Centro",
+                short_desc: "Venta | 5 Recámaras, Potencial Comercial, Mérida",
+                long_desc: "Casona colonial con detalles arquitectónicos originales y techos altos. Necesita remodelación, pero tiene un enorme potencial para convertirse en boutique hotel, galería o residencia de lujo. Ubicación inmejorable en el centro histórico. Terreno: 800 m².",
+                price: "$8,900,000 MXN",
+                image_url: "https://placehold.co/400x600/3f51b5/ffffff?text=CASONA+COLONIAL"
+            }
+        ];
+
+        // Función para renderizar una tarjeta de propiedad
+        function createProductCard(product) {
+            const card = document.createElement('div');
+            // Clases de estilo de la tarjeta original
+            card.className = "product-card text-center p-6 bg-white rounded-xl shadow-lg transition-all duration-300 transform hover:shadow-xl hover:-translate-y-1 cursor-pointer";
+            
+            card.innerHTML = `
+                <!-- Contenedor para la imagen de la tarjeta -->
+                <div class="product-image-container mb-6">
+                    <!-- Ahora usa product.image_url. Se añade 'onerror' como fallback -->
+                    <img src="${product.image_url}" 
+                          alt="Imagen de ${product.name}" 
+                          onerror="this.onerror=null; this.src='https://placehold.co/200x300/cccccc/000000?text=Propiedad';"
+                          class="w-3/5 max-w-[200px] h-full object-contain rounded-lg transition-transform duration-300">
+                </div>
+
+                <!-- Nombre de la Propiedad -->
+                <h2 class="text-xl font-bold text-gray-900 mb-1">${product.name}</h2>
+                
+                <!-- Descripción Corta/Uso -->
+                <p class="text-sm text-gray-500 mb-4">${product.short_desc}</p>
+
+                <!-- Flecha de Enlace -->
+                <button data-product-id="${product.id}" class="view-details-btn flex justify-center items-center space-x-2 text-[#0056b3] font-semibold text-base hover:text-blue-700 transition-colors w-full">
+                    <span>Ver Detalles</span>
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </button>
+            `;
+
+            // Añadir el evento click directamente al botón "Ver Detalles"
+            card.querySelector('.view-details-btn').addEventListener('click', () => showProductDetails(product.id));
+            
+            return card;
+        }
+
+        // Función para mostrar el modal de detalles
+        function showProductDetails(id) {
+            const product = products.find(p => p.id === id);
+            if (!product) {
+                console.error("Propiedad no encontrada:", id);
+                return;
+            }
+
+            const modal = document.getElementById('product-modal');
+            
+            // Rellenar el contenido del modal
+            document.getElementById('modal-name').textContent = product.name;
+            document.getElementById('modal-short-description').textContent = product.short_desc;
+            document.getElementById('modal-price').textContent = product.price;
+            document.getElementById('modal-long-description').textContent = product.long_desc;
+            // El src del modal ahora usa product.image_url
+            const modalImageElement = document.getElementById('modal-image');
+            modalImageElement.src = product.image_url;
+            modalImageElement.alt = `Imagen Completa de ${product.name}`;
+
+            // Mostrar el modal
+            modal.classList.add('open');
+            document.body.style.overflow = 'hidden'; // Evita el scroll en el cuerpo
+        }
+
+        // Función para ocultar el modal
+        function hideProductDetails() {
+            const modal = document.getElementById('product-modal');
+            modal.classList.remove('open');
+            document.body.style.overflow = ''; // Restaura el scroll en el cuerpo
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const productsGrid = document.getElementById('products-grid');
+            const modal = document.getElementById('product-modal');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+
+            // 1. Lógica del Menú Móvil (Existente)
+            menuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // 2. Renderizar las 10 tarjetas de propiedades
+            products.forEach(product => {
+                productsGrid.appendChild(createProductCard(product));
+            });
+
+            // 3. Lógica del Modal
+            
+            // Cerrar al hacer clic en el botón de cerrar
+            closeModalBtn.addEventListener('click', hideProductDetails);
+
+            // Cerrar al hacer clic en el overlay (fondo gris oscuro)
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    hideProductDetails();
+                }
+            });
+
+            // Cerrar al presionar la tecla ESC
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && modal.classList.contains('open')) {
+                    hideProductDetails();
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
